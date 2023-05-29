@@ -10,7 +10,7 @@ import { useState, useContext, useEffect } from "react";
 import FeedbackContext from "../context/FeedbackContext";
 
 const FeedbackForm = () => {
-  const { handleAdd, feedbackEdit, updateFeedback } =
+  const { addFeedback, feedbackEdit, updateFeedback } =
     useContext(FeedbackContext);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const FeedbackForm = () => {
       if (feedbackEdit.edit === true) {
         updateFeedback(feedbackEdit.item.id, newFeedback);
       } else {
-        handleAdd(newFeedback);
+        addFeedback(newFeedback);
       }
       setText("");
     }
